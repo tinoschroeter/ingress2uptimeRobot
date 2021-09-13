@@ -1,0 +1,10 @@
+apiVersion: skaffold/v1
+kind: Config
+build:
+  artifacts:
+  - image: registry.tino.sh/ingress-uptime
+    context: ../../
+    docker:
+      target: uptime
+deploy:
+  kustomize: {}

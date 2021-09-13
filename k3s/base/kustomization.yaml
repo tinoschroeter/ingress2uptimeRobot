@@ -1,0 +1,6 @@
+namespace: statuspage
+resources:
+  - api-clusterRole.yaml
+  - api-RoleBinding.yaml
+  - api-sa.yaml
+  - uptimerobot-updater.yaml
