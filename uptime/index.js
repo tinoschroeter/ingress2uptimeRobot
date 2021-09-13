@@ -19,7 +19,7 @@ request.get(
     }
     if (response) {
       console.log(`statusCode: ${response.statusCode}`);
-      if(response.statusCode !== 200) {
+      if(response.statusCode !== 200 || !API) {
         process.exit(1)
       }
     }

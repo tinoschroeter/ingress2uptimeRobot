@@ -15,8 +15,12 @@ spec:
           containers:
           - name: uptimerobot-updater
             image: registry.tino.sh/ingress-uptime
-            envFrom:
-            - secretRef:
-              name: API
+            env:
+              - name: API
+                valueFrom:
+                  secretKeyRef:
+                    name: api-uptimerobot
+                    key: API
             command: ["node", "index.js"]
+
           restartPolicy: OnFailure
