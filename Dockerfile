@@ -1,4 +1,4 @@
-FROM node:14-buster AS uptime
+FROM node:16.9.1-bullseye-slim AS uptime
 
 RUN apt update && apt dist-upgrade -y
 RUN rm -rf /var/lib/apt/lists/*
