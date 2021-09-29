@@ -1,6 +1,7 @@
 ## ingress2uptimeRobot
 
 [![k8s](https://img.shields.io/badge/Kubernetes-blue.svg)](https://github.com/kubernetes/kubernetes)
+[![Build Status](https://jenkins.tino.sh/buildStatus/icon?job=ingress2uptimeRobot%2Fmaster)](https://jenkins.tino.sh/job/ingress2uptimeRobot/job/master/)
 
 
 How to access kubernetes API inside a Pod
