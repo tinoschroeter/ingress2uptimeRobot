@@ -1,7 +1,4 @@
-FROM node:16.11.1-bullseye-slim AS uptime
-
-RUN apt-get update && apt-get dist-upgrade -y \
-&& rm -rf /var/lib/apt/lists/*
+FROM node:gallium-bullseye-slim AS uptime
 
 WORKDIR /app
 
