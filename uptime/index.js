@@ -19,19 +19,20 @@ request.get(
     }
     if (response) {
       console.log(`statusCode: ${response.statusCode}`);
-      if(response.statusCode !== 200 || !API) {
-        process.exit(1)
+      if (response.statusCode !== 200 || !API) {
+        process.exit(1);
       }
     }
     const json = JSON.parse(body);
     json.items.forEach((item) => {
       item.spec.rules.forEach((host) => {
         const url = host.host;
-        const regex = ".well-known/acme-challenge";
+        const acme = ".well-known/acme-challenge";
+        const oauth = "./oauth2";
         let uri = "";
         if (host.http.paths[0].path) {
           host.http.paths.forEach((path) => {
-            if (!path.path.match(regex)) {
+            if (!path.path.match(acme) || !path.path.match(oauth)) {
               uri = url + path.path;
             }
           });
