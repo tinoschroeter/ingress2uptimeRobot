@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: uptimerobot-updater-debug
+  name: uptimerobot-updater-deploy
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: uptimerobot-updater-debug
+  template:
+    metadata:
+      labels:
+        app: uptimerobot-updater-debug
+    spec:
+      serviceAccountName: api-service-account
+      containers:
+      - name: uptimerobot-updater
+        image: registry.tino.sh/ingress-uptime
+        env:
+          - name: API
+            valueFrom:
+              secretKeyRef:
+                name: api-uptimerobot
+                key: API

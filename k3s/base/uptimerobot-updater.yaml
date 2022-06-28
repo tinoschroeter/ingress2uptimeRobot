@@ -3,15 +3,16 @@ kind: CronJob
 metadata:
   name: uptimerobot-updater
 spec:
-  schedule: "*/60 * * * *"
+  schedule: "*/120 * * * *"
   successfulJobsHistoryLimit: 3
   failedJobsHistoryLimit: 3
   concurrencyPolicy: Forbid
   jobTemplate:
     spec:
+      ttlSecondsAfterFinished: 1000
       template:
         spec:
-          serviceAccountName: api-service-account 
+          serviceAccountName: api-service-account
           containers:
           - name: uptimerobot-updater
             image: registry.tino.sh/ingress-uptime
@@ -23,4 +24,4 @@ spec:
                     key: API
             command: ["node", "index.js"]
 
-          restartPolicy: OnFailure
+          restartPolicy: Never
