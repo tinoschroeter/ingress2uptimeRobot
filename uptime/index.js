@@ -11,7 +11,7 @@ kc.applyToRequest(opts);
 let timer = 1000;
 
 request.get(
-  `${kc.getCurrentCluster().server}/apis/networking.k8s.io/v1beta1/ingresses`,
+  `${kc.getCurrentCluster().server}/apis/networking.k8s.io/v1/ingresses`,
   opts,
   (error, response, body) => {
     if (error) {
