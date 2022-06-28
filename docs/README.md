@@ -20,3 +20,14 @@ https://github.com/kubernetes-client/javascript
 
 ## Service Account
 https://devopscube.com/kubernetes-api-access-service-account/
+
+
+## Directly accessing the REST API
+```
+kubectl proxy --port=8080
+```
+
+```
+curl http://localhost:8080/apis/networking.k8s.io/v1/ingresses
+curl http://localhost:8080/api/
+```
