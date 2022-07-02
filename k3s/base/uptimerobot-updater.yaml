@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: uptimerobot-updater
 spec:
-  schedule: "*/10 * * * *"
+  schedule: "*/240 * * * *"
   successfulJobsHistoryLimit: 3
   failedJobsHistoryLimit: 3
   concurrencyPolicy: Forbid
